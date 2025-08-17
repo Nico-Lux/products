@@ -6,10 +6,11 @@ while True:
 	price = input('請輸入商品價格：')
 	p = [name, price] #小清單
 	products.append(p) #小清單裝入大清單
-print(products)
-for product in products:
-	print(product[0]) #記得加上product，不然只會印出[0]
-	print(product[0], '的價格是', product[1])
+#print(products)
+#for product in products:
+	#print(product[0], '的價格是', product[1])
 
-
-
+with open('products.csv', 'w', encoding = 'utf-8') as f:
+	f.write('商品,價格\n')
+	for d in products:
+		f.write(d[0] + ',' + d[1] + '\n')
